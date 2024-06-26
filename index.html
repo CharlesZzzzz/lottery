@@ -149,7 +149,7 @@
 <div id="tools" class="tools">
      <button
         v-for="value in btns"
-        @click="onClick(value)"
+        @click="fakeOnClick(value)"
         class="pure-button"
         :class="{ 'button-error': selected == value}"
        >{{value}}</button>
@@ -221,7 +221,7 @@
                 selected: 1,
                 running: false,
                 btns: [
-                    1
+                    "看球"
                 ]
             },
             mounted () {
@@ -242,6 +242,11 @@
                     $('#result').css('display', 'none');
                     $('#main').removeClass('mask');
                     this.selected = num;
+                },
+                fakeOnClick: function(num){
+                    $('#result').css('display', 'none');
+                    $('#main').removeClass('mask');
+                    this.selected = 1;
                 },
                 toggle: function(){
                     if(this.running){
