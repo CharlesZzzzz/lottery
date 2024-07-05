@@ -136,6 +136,20 @@
             text-decoration: none;
             color: white;
         }
+
+        .pure-button img {
+            width: 50px; /* Adjust as needed */
+            height: auto;
+            vertical-align: middle;
+        }
+        
+        .tools .pure-button {
+            padding: 0; /* Remove padding if the image itself has margins */
+            border: none; /* Assuming you don't need borders */
+            background: none; /* Remove any background styles from buttons */
+        }
+
+        
     </style>
 </head>
 <body>
@@ -146,7 +160,7 @@
 </div>
 <div id="result" class="result">
 </div>
-<div id="tools" class="tools">
+<!-- <div id="tools" class="tools">
      <button
         v-for="value in btns"
         @click="fakeOnClick(value)"
@@ -159,7 +173,26 @@
        :class="{'button-secondary': !running,
                'button-success': running}">{{running?'停!':'开始'}}</button>
     <button class="pure-button button-warning" @click="reset">重置</button>
+</div> -->
+
+<div id="tools" class="tools">
+    <button
+        v-for="value in btns"
+        @click="fakeOnClick(value)"
+        class="pure-button"
+        :class="{ 'button-error': selected == value}">
+        <img :src="'img/button-' + value + '.png'" alt="Button Image">
+    </button>
+    <button class="pure-button" @click="toggle">
+        <img :src="running ? 'img/button-stop.png' : 'img/button-start.png'" alt="Toggle">
+    </button>
+    <button class="pure-button button-warning" @click="reset">
+        <img src="img/reset.png" alt="Reset">
+    </button>
 </div>
+
+
+
 <script type="text/javascript" src="js/zepto.js"></script>
 <script type="text/javascript" src="js/vue.js"></script>
 <script type="text/javascript" src="js/tagcanvas.js"></script>
