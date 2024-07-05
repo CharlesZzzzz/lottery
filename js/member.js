@@ -1,6 +1,6 @@
 var member = [
   {
-    "phone": "嘴两个",
+    "phone": "神秘大奖",
     "name": "1"
   },
   {
@@ -348,11 +348,11 @@ var member = [
     "name": "87"
   },
   {
-    "phone": "嘴一个再来一次",
+    "phone": "任意鞋一双",
     "name": "88"
   },
   {
-    "phone": "嘴一个再来一次",
+    "phone": "任意衣服一件",
     "name": "89"
   },
   {
